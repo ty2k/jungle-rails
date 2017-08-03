@@ -77,13 +77,14 @@ main section.categories-show {
   }
 }
 
-main section.products-show {
+main section.orders-show {
+  padding-bottom: 40px;
+}
 
+main section.products-show {
   .product-detail {
     img.main-img {
       max-width: 100%;
     }
   }
 }
-
-
