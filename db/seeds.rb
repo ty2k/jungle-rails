@@ -132,5 +132,51 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Re-creating Users ..."
+
+User.destroy_all
+
+User.create!({
+  first_name: 'John',
+  last_name: 'Doe',
+  email: 'johndoe@gmail.com',
+  password_digest: '$2a$10$Bn0Sk9tkCBj0ireCSbGv9ONLAGwMBkZ9fpcqjXb.TJiYFUsVdTJAS'
+})
+User.create!({
+  first_name: 'Jane',
+  last_name: 'Doe',
+  email: 'janedoe@gmail.com',
+  password_digest: '$2a$10$MtQsSduiTWTeXqcP/UmB3O2m9j5foWn116YRGbPrAtqTeJw/mXE96'
+})
+
+# REVIEWS
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+product1 = Product.find(1)
+product2 = Product.find(2)
+
+product1.reviews.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'Great product A+ would buy again',
+  rating: 5
+})
+product1.reviews.create!({
+  product_id: 1,
+  user_id: 2,
+  description: 'Pretty good but I have seen better',
+  rating: 3
+})
+product2.reviews.create!({
+  product_id: 2,
+  user_id: 1,
+  description: 'Hot garbage, did not protect my iPhone at all',
+  rating: 2
+})
 
 puts "DONE!"
