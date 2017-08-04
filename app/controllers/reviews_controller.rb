@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:edit, :destroy]
-  before_action :create, only: :require_login
+  before_action :set_review, only: :destroy
+  before_action :require_login, only: [:create, :destroy]
+  # before_action :create, only: :require_login
+  # before_action :destroy, only: :require_login
 
   def create
     @product = Product.find(params[:product_id])
@@ -16,6 +18,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review.destroy
+    redirect_to :back
+  end
+
   private
     def set_review
       @review = Review.find(params[:id])
@@ -26,9 +33,8 @@ class ReviewsController < ApplicationController
     end
 
     def require_login
-      unless current_user?
-        flash[:error] = "You must be logged in to access this section"
-        redirect_to @product # halts request cycle
+      if !current_user
+        redirect_to :login
       end
     end
 end
