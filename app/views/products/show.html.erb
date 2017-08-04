@@ -54,7 +54,7 @@
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
         <h2><%= pluralize(@product.reviews.count, 'Customer Review') %></h2>
-        <% @product.reviews.each do |r| %>
+        <% @product.reviews.order(created_at: :desc).each do |r| %>
           <div class="well">
             <h3>Review</h3>
             <p>Author: <%= r.user.first_name %> <%= r.user.last_name %></p>
@@ -66,9 +66,9 @@
             </p>
             <p>Date: <%= r.created_at.to_formatted_s(:long) %></p>
             <% if r.user == current_user %>
-              <div class="btn btn-warning">
-                <%= fa_icon 'trash' %> Delete
-              </div>
+              <%= form_for :review, url: "/reviews/#{r.id}", method: 'DELETE' do |f| %>
+                <%= f.submit 'Delete', class: 'btn btn-block btn-warning' %>
+              <% end %>
             <% end %>
           </div>
         <% end %>
