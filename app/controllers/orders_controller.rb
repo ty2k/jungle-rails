@@ -12,9 +12,9 @@ class OrdersController < ApplicationController
       empty_cart!
       respond_to do |format|
         # Tell the UserMailer to send an order confirmation email
-        UserMailer.order_confirmation_email(@order).deliver_now
-        format.json {render json: @order, status: :created, location: @user}
-        format.html {@order}
+        UserMailer.order_confirmation_email(order).deliver_now
+        format.json {render json: order, status: :created, location: @user}
+        format.html {order}
       end
       redirect_to order, notice: 'Your Order has been placed.'
     else
