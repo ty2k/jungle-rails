@@ -65,6 +65,11 @@
             <% end %>
             </p>
             <p>Date: <%= r.created_at.to_formatted_s(:long) %></p>
+            <% if r.user == current_user %>
+              <div class="btn btn-warning">
+                <%= fa_icon 'trash' %> Delete
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
