@@ -2,9 +2,29 @@
 
 Jungle is a a mini e-commerce application built with Rails 4.2. Jungle uses a PostgreSQL database to store products, users, and user reviews. It uses [Stripe's API](https://stripe.com/docs/api) for payment processing.
 
-Jungle is course work from [Lighthouse Labs](https://github.com/lighthouse-labs/).
+Jungle is course work from [Lighthouse Labs](https://github.com/lighthouse-labs/). My additions to [the template exercise](https://github.com/lighthouse-labs/jungle-rails) include:
 
-## Setup & Run Instructions
+* Admin features
+  * Admins can add/remove categories and products
+  * Admin HTTP authetication
+* User features
+  * User registration
+  * User authentication
+  * User password hashing
+* Product features
+  * Authenticated users can add reviews of products and delete their reviews
+  * "Sold Out" label added to out-of-stock products
+* Order features
+  * Order details page
+  * Order summary email
+* Rspec testing
+  * Coverage for user creation and authentication
+
+## See It Deployed
+
+View a Heroku dyno running Jungle here: https://powerful-falls-46409.herokuapp.com/
+
+## Local Setup & Run Instructions
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
@@ -18,7 +38,7 @@ Jungle is course work from [Lighthouse Labs](https://github.com/lighthouse-labs/
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Use Credit Card # 4111 1111 1111 1111 for testing success scenarios at checkout. Use a date in the future for expiration and 111 for the security number.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
@@ -27,6 +47,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* Testing: Rspec
+
+## Screenshots
+
+![Jungle product index](https://raw.githubusercontent.com/ty2k/jungle-rails/master/docs/Jungle-screenshot-product-index.png)
+
+![Jungle view product page](https://raw.githubusercontent.com/ty2k/jungle-rails/master/docs/Jungle-screenshot-view-product-page.png)
 
 ## Contact the Author
 
