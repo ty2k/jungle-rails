@@ -1,6 +1,6 @@
 # Jungle
 
-Jungle is a a mini e-commerce application built with Rails 4.2. Jungle uses a PostgreSQL database to store products, users, and user reviews. It uses [Stripe's API](https://stripe.com/docs/api) for payment processing.
+Jungle is a mini e-commerce application built with Rails 4.2. Jungle uses a PostgreSQL database to store categories, products, users, and user reviews. [Stripe's API](https://stripe.com/docs/api) is used for payment processing. Administrators are able to add and remove categories and products. Users are able to make purchases and review products. Rspec testing is employed with coverage for user registration and authentication.
 
 Jungle is course work from [Lighthouse Labs](https://github.com/lighthouse-labs/). My additions to [the template exercise](https://github.com/lighthouse-labs/jungle-rails) include:
 
@@ -17,7 +17,7 @@ Jungle is course work from [Lighthouse Labs](https://github.com/lighthouse-labs/
 * Order features
   * Order details page
   * Order summary email
-* Rspec testing
+* RSpec testing
   * Coverage for user creation and authentication
 
 ## See It Deployed
@@ -47,7 +47,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
-* Testing: Rspec
+* Testing: RSpec
 
 ## Screenshots
 
